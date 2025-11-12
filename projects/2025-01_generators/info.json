@@ -1,0 +1,42 @@
+{
+	"id": 14,
+	"name": "2025-01_generators",
+	"title": "Power generators",
+	"start_date": "2024-01-01",
+	"soft_end_date": "2025-12-31",
+        "summary": "This is a TEST instance not intended for contribution. To contribute, see OpenStreetMap and MapYourGrid websites",
+	"links": {
+		"osmwiki": "https://wiki.openstreetmap.org/wiki/Power_networks",
+		"osmblog": "https://mapyourgrid.org"
+	},
+	"database": {
+		"osmium_tag_filter": "nw/power=generator&generator:source",
+		"imposm": {
+			"types": ["point", "polygon"],
+			"mapping": { "power": ["generator"], "generator:source": true }
+		}
+	},
+	"datasources": [
+		{
+			"source": "osm",
+			"name": "Generateurs de lignes dans OSM",
+			"description": "Ce generateur existe déjà dans OSM. Vous pouvez compléter ou modifier ses informations si nécessaire."
+		},
+		{ "source": "stats" }
+	],
+	"statistics": {
+		"count": true,
+		"feature_name": "generateurs",
+		"points": { "add": 3, "edit": 2, "delete": 1 }
+	},
+	"editors": {
+		"pdm": false,
+		"all": {
+			"comment": "Intégration générateurs",
+			"hashtags": "mapyourgrid"
+		}
+	},
+	"opendata": [
+		{ "title": "Carte des infrastructures dont générateurs électriques", "via": "OpenInfraMap", "url": "https://openinframap.org/#15/45.9120/6.1275" }
+	]
+}

@@ -1,0 +1,42 @@
+{
+	"id": 15,
+	"name": "2025-01_plants",
+	"title": "Power plants",
+	"start_date": "2024-01-01",
+	"soft_end_date": "2025-12-31",
+        "summary": "This is a TEST instance not intended for contribution. To contribute, see OpenStreetMap and MapYourGrid websites",
+	"links": {
+		"osmwiki": "https://wiki.openstreetmap.org/wiki/Power_networks",
+		"osmblog": "https://mapyourgrid.org"
+	},
+	"database": {
+		"osmium_tag_filter": "w/power=plant&plant:source",
+		"imposm": {
+			"types": ["point", "polygon", "relation"],
+			"mapping": { "power": ["plant"], "plant:source": true }
+		}
+	},
+	"datasources": [
+		{
+			"source": "osm",
+			"name": "Centrale dans OSM",
+			"description": "Cette centrale existe déjà dans OSM. Vous pouvez compléter ou modifier ses informations si nécessaire."
+		},
+		{ "source": "stats" }
+	],
+	"statistics": {
+		"count": true,
+		"feature_name": "centrale",
+		"points": { "add": 3, "edit": 2, "delete": 1 }
+	},
+	"editors": {
+		"pdm": false,
+		"all": {
+			"comment": "Intégration centrale électrique",
+			"hashtags": "mapyourgrid"
+		}
+	},
+	"opendata": [
+		{ "title": "Carte des infrastructures dont centrales électriques", "via": "OpenInfraMap", "url": "https://openinframap.org/#15/45.9120/6.1275" }
+	]
+}
