@@ -1,0 +1,42 @@
+{
+	"id": 13,
+	"name": "2025-01_supports",
+	"title": "Power supports",
+	"start_date": "2024-01-01",
+	"soft_end_date": "2025-12-31",
+        "summary": "This is a TEST instance not intended for contribution. To contribute, see OpenStreetMap and MapYourGrid websites",
+	"links": {
+		"osmwiki": "https://wiki.openstreetmap.org/wiki/Power_networks",
+		"osmblog": "https://mapyourgrid.org"
+	},
+	"database": {
+		"osmium_tag_filter": "n/power=pole,tower,portal,insulator,terminal",
+		"imposm": {
+			"types": ["point"],
+			"mapping": { "power": ["pole","tower","portal","insulator","terminal"] }
+		}
+	},
+	"datasources": [
+		{
+			"source": "osm",
+			"name": "Support dans OSM",
+			"description": "Ce support électrique existe déjà dans OSM. Vous pouvez compléter ou modifier ses informations si nécessaire."
+		},
+		{ "source": "stats" }
+	],
+	"statistics": {
+		"count": true,
+		"feature_name": "supports électriques",
+		"points": { "add": 3, "edit": 2 }
+	},
+	"editors": {
+		"all": {
+			"comment": "Intégration support électrique",
+			"hashtags": "mapyourgrid"
+		},
+		"pdm": false
+	},
+	"opendata": [
+		{ "title": "Carte des infrastructures dont postes électriques", "via": "OpenInfraMap", "url": "https://openinframap.org/#15/45.9120/6.1275" }
+	]
+}
