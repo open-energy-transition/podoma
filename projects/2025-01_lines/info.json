@@ -10,10 +10,10 @@
 		"osmblog": "https://mapyourgrid.org"
 	},
 	"database": {
-		"osmium_tag_filter": "w/power=line,cable&voltage",
+		"osmium_tag_filter": "w/power=line,cable",
 		"imposm": {
 			"types": ["linestring"],
-			"mapping": { "power": ["line", "cable"], "voltage": true }
+			"mapping": { "power": ["line", "cable"] }
 		},
         	"labels":{
                 	"transmission":"$.voltage ? (@ >= 50000)",
