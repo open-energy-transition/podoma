@@ -57,6 +57,7 @@ The general configuration of the tool is to be filled in `config.json`. There is
 - `OSM_URL`: OpenStreetMap instance to use (example `https://www.openstreetmap.org`)
 - `OSM_API_URL` : API OpenStreetMap instance to use (example `https://www.api.openstreetmap.org`)
 - `JOSM_REMOTE_URL`: address of the JOSM server to reach (example `http://localhost:8111`)
+- `OVERPASS_URL`: URL towards the interpreter of an Overpass-API instance to be used for missing members retrieval
 - `OSMOSE_URL`: Osmose instance to use (example `https://osmose.openstreetmap.fr`)
 - `NOMINATIM_URL`: instance of Nominatim to use (example `https://nominatim.openstreetmap.org`)
 - `MAPILLARY_URL`: Mapillary instance to use (example `https://www.mapillary.com`)
@@ -174,7 +175,57 @@ psql -d postgresql://... -v features_table="pdm_features_project" -v labels_tabl
 
 Then, the `update_projects` should be inited again to propagate the new labels into counts and KPI.
 
+<<<<<<< HEAD
 #### Contributions taggings
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+#### Missing members
+As explained upside, Podoma uses the daily diffs to keep projects updated. Those diffs files only contain modified features and even if a way or a relation may be included in it, none of their members will be mentioned is they hadn't been edited themselves.  
+It can finally causes issues when some unknown features in the database are rferenced by ways or relations.
+
+Podoma only keeps track of useful features for projects, it needs to check after each update if unknown features should be retrieved.  
+Overpass API is used by projects which require to get such missing members. A single query is sent to retrieve all nodes, ways, relations and their descendents to take care of recursivity. Thus a query covering 10 missing features can lead to a greater amount of results.
+
+Those features are then processed the same way than the ones we got from daily diffs files. This process complete the temporary files without any particularism.
+
+To disable this retrieval, just set a null `OVERPASS_URL` in your Podoma configuration file.
+
+>>>>>>> 8799765 (Add documentation)
+>>>>>>> df28ba8 (Add documentation)
+>>>>>>> c56a4f8 (Add documentation)
+>>>>>>> 90ff22d (Add documentation)
+>>>>>>> 6cf96f6 (Add documentation)
+>>>>>>> f4d3e2e (Add documentation)
+>>>>>>> 65f233f (Add documentation)
+### Disable imposm3 usage
+>>>>>>> 0c9cc1e (Add documentation)
 
 Podoma operates a more detailed tagging of contributions out of 3 [OsmChange](https://wiki.openstreetmap.org/wiki/OsmChange) categories (add, modifiy, delete).  
 Furthermore, it distinguishes project level and label levels. Features can be independently added and removed from labels and kept in project along their lifecycle.
@@ -278,6 +329,34 @@ Each project configuration set how many points are given according to contributi
 
 Points are distinguishsed between project and label contributions.
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 222115f (Add documentation)
+>>>>>>> 8799765 (Add documentation)
+>>>>>>> eb89565 (Add documentation)
+>>>>>>> df28ba8 (Add documentation)
+>>>>>>> 92ea05f (Add documentation)
+>>>>>>> c56a4f8 (Add documentation)
+>>>>>>> dfdf0ba (Add documentation)
+>>>>>>> 90ff22d (Add documentation)
+>>>>>>> 9144e6f (Add documentation)
+>>>>>>> 6cf96f6 (Add documentation)
+>>>>>>> b7bb345 (Add documentation)
+>>>>>>> f4d3e2e (Add documentation)
+>>>>>>> c4df1dc (Add documentation)
+>>>>>>> 65f233f (Add documentation)
 ### Data sources
 
 Several data sources can be used, and are to be displayed in the `datasources` field of the `info.json` file.
