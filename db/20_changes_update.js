@@ -475,7 +475,7 @@ Object.values(projects).forEach(project => {
 });
 
 script += `
-    if [[ "\$keep" = "keep" ]]; then
+    if [ "\$keep" != "keep" ]; then
         echo "== Removing temp files"
         rm -f ${CONFIG.WORK_DIR}/*.osh.pbf
     fi
@@ -650,7 +650,7 @@ Object.values(projects).forEach(project => {
 });
 
 script += `
-    if [[ "\$keep" = "keep" ]]; then
+    if [ "\$keep" != "keep" ]; then
         echo "== Removing temp files"
         rm -f ${CONFIG.WORK_DIR}/*.osc.*
     fi
