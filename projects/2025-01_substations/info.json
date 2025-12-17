@@ -10,7 +10,7 @@
 		"osmblog": "https://mapyourgrid.org"
 	},
 	"database": {
-		"osmium_tag_filter": "nw/power=substation",
+		"osmium_tag_filter": "nwr/power=substation",
 		"imposm": {
 			"types": ["point", "polygon"],
 			"mapping": { "power": ["substation"] }
