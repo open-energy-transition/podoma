@@ -21,6 +21,10 @@
                         "transmission_overhead":"$ ? (@.voltage[*] >= 50000 && @.power == \"line\")"
         	}
 	},
+        "teams": {
+                "mapyourgrid":["InfosReseaux","map-dynartio","ben10dynartio","Andreas Hernandez","Russ","relaxxe"],
+                "dynartio": ["map-dynartio","ben10dynartio"]
+        },
 	"datasources": [
 		{
 			"source": "osm",
