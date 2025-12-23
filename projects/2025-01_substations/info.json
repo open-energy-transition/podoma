@@ -16,15 +16,16 @@
 			"mapping": { "power": ["substation"] }
 		},
                 "labels":{
-                        "transmission":"$ ? (@.substation == \"transmission\" || @.voltage[*] >= 50000)",
+                        "transmission":"$ ? (@.substation == "transmission" || (@.voltage[*] >= 50000 && !exists(@.substation)))",
                         "distribution":"$ ? (@.substation == \"distribution\")",
                         "generation":"$ ? (@.substation == \"generation\")",
                         "industrial":"$ ? (@.substation == \"industrial\")"
                 }
 	},
         "teams": {
-                "mapyourgrid":["InfosReseaux","map-dynartio","ben10dynartio","Andreas Hernandez","Russ","relaxxe"],
-                "dynartio": ["map-dynartio","ben10dynartio"]
+		"mapyourgrid":["InfosReseaux","map-dynartio","ben10dynartio","Andreas Hernandez","Tobias Augspurger","Mwiche","davidtt92","Russ","relaxxe","overflorian","nlehuby"],
+                "dynartio": ["map-dynartio","ben10dynartio"],
+                "junglebus": ["overflorian", "nlehuby"]
         },
 	"datasources": [
 		{
@@ -36,6 +37,7 @@
 	],
 	"statistics": {
 		"count": true,
+                "length": true,
 		"feature_name": "power substations",
 		"points": { "add": 3, "edit": 2 }
 	},

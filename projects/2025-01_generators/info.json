@@ -16,6 +16,11 @@
 			"mapping": { "power": ["generator"], "generator:source": true }
 		}
 	},
+        "teams": {
+                "mapyourgrid":["InfosReseaux","map-dynartio","ben10dynartio","Andreas Hernandez","Tobias Augspurger","Mwiche","davidtt92","Russ","relaxxe","overflorian","nlehuby"],
+                "dynartio": ["map-dynartio","ben10dynartio"],
+                "junglebus": ["overflorian", "nlehuby"]
+        },
 	"datasources": [
 		{
 			"source": "osm",
@@ -26,6 +31,7 @@
 	],
 	"statistics": {
 		"count": true,
+                "length": false,
 		"feature_name": "generateurs",
 		"points": { "add": 3, "edit": 2, "delete": 1 }
 	},

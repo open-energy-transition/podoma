@@ -1,7 +1,7 @@
 {
 	"id": 16,
 	"name": "2025-01_circuits",
-	"title": "Power generators",
+	"title": "Power circuits",
 	"start_date": "2024-01-01",
 	"soft_end_date": "2025-12-31",
         "summary": "This is a TEST instance not intended for contribution. To contribute, see OpenStreetMap and MapYourGrid websites",
@@ -14,7 +14,11 @@
 		"imposm": {
 			"types": ["linestrings"],
 			"mapping": { "power": ["circuits"] }
-		}
+		},
+                "labels":{
+                	"transmission":"$.voltage ? (@ >= 50000)",
+                	"distribution":"$.voltage ? (@ < 50000)"
+        	}
 	},
 	"datasources": [
 		{
@@ -26,6 +30,7 @@
 	],
 	"statistics": {
 		"count": true,
+                "length": true,
 		"feature_name": "segments",
 		"points": { "add": 3, "edit": 2, "delete": 1 }
 	},
